@@ -1,0 +1,9 @@
+package collectiondemos;
+import java.util.Comparator;
+
+import equalshash.Trainee;
+
+public class TraineeCompartor implements Compartor<Trainee> {
+
+	
+}

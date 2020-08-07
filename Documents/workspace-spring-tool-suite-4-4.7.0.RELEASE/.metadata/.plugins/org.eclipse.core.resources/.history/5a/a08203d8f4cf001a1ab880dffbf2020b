@@ -1,0 +1,15 @@
+package collectiondemos;
+
+import java.util.Comparator;
+
+import equalshash.Trainee;
+
+public class TraineeComparator implements Comparator<Trainee> {
+
+	 public int compare(Trainee o1, Trainee o2) {
+		int id1 = o1.getId();
+		int id2 = o2.getId();
+		int compare = id2 - id1;
+		return compare;
+	}
+}

@@ -1,0 +1,114 @@
+package details.ui;
+
+
+import details.entities.Account;
+import details.entities.*;
+import details.exception.*;
+import details.service.CustomerServiceImpl;
+import details.service.ICustomerService;
+
+
+
+import java.util.*;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+
+public class CustomerMain {
+
+	
+	private ICustomerService service = new CustomerServiceImpl();
+
+	public static void main(String[] args) {
+		CustomerMain demo = new CustomerMain();
+		demo.runApp();
+	}
+
+
+	public void runApp() {
+		try {
+			Account account1 = new Account(100, "e345");
+			Account account2 = new Account(500, "gth56");
+			Account account3 = new Account(300, "ght567");
+			Account account4 = new Account(600, "rf5jh");
+
+
+			
+
+			RegularCustomer customer1 = new RegularCustomer("s3ed","sai",account1,"banglore");
+			
+			
+			service.add(customer1);
+			int id1 = customer1.getId();
+			
+			
+			RegularCustomer customer2 = new RegularCustomer("3ede3","teja",account2,"hyderabad");
+		
+			service.add(customer2);
+			int id2=customer2.getId();
+			
+			BusinessCustomer customer3 = new BusinessCustomer("Indore", 3, "Rohan", 8910,account3);
+			
+			service.add(customer3);
+			int id3=customer3.getId();
+			
+			service.updateName(customer3.getId(), "Rohan Rathore");
+			
+			BusinessCustomer customer4 = new BusinessCustomer("Raipur", 3, "Gohan", 1112,account4);
+			
+			service.add(customer4);
+			int id4 = customer4.getId(); 
+			
+			
+			Customer fetched = service.findById(id3);
+			display(fetched);
+			System.out.print("*********diplaying All Customers ***********");
+			displayAll();
+			}
+			catch(InvalidCustomerArgumentException e) {
+			e.printStackTrace();
+			System.out.print(e.getMessage());
+			}
+			catch(CustomerNotFoundException e) {
+			e.printStackTrace();
+		 	System.out.println(e.getMessage());
+			}	
+			catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("some thing went wrong");
+			}
+				
+	}
+		public void displayAll() {
+			List<Customer> list=service.findAll();
+			for(Customer customer:list) {
+				display(customer);
+			}
+		}
+		
+		
+		
+		public void display(Customer customer){
+			System.out.println("  Customer  -- : " +customer.getId() +" "+customer.getName()
+			+" "+customer.getBalance());
+			
+			Account account = customer.getAccount();
+			System.out.println("  Customer  pursuing Account -- : " + account.getBalance() + " Pancard Number -- "
+					+ account.getPancard());
+			
+			if (customer instanceof RegularCustomer) {
+				RegularCustomer rc = (RegularCustomer) customer;
+				System.out.println("Account is " + ca.getHouseAddress());
+			}
+
+			if (customer instanceof BusinessCustomer) {
+				BusinessCustomer bc = (BusinessCustomer) customer;
+				System.out.println("Account is " + ca.getBusinessAddress());
+
+			}
+
+		}	
+	
+			
+			

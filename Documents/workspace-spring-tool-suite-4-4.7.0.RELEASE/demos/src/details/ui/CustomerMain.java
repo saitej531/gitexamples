@@ -40,13 +40,13 @@ public class CustomerMain {
 			
 			
 			service.add(customer1);
-			String id1 = customer1.getCustomerId();
+			String id1 = customer1.getcustomerId();
 			
 			
 			RegularCustomer customer2 = new RegularCustomer("3ede3","teja",account2,"hyderabad");
 		
 			service.add(customer2);
-			int id2=customer2.getId();
+			int id2= customer2.getId();
 			
 			BusinessCustomer customer3 = new BusinessCustomer("Indore", 3, "Rohan", 8910,account3);
 			

@@ -1,0 +1,29 @@
+package java8demos;
+
+public class FunctionExample {
+	
+	public static void main(String args[])
+	{
+		
+		IStringLength function1=(arg)->arg.length();
+		int length1=function1.StringLength("hello");
+		int length2=function1.StringLength("sai");
+		
+		System.out.println("line");
+		
+		
+		
+		IStringLength function2=(arg)->{
+			return arg.length();
+			
+			
+		};
+		int length3=function2.StringLength("bye");
+		
+		
+		
+			
+		}
+				
+	}
+

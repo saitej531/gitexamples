@@ -1,0 +1,27 @@
+package exceptiondemos;
+
+public class CustomUncheckedException {
+	public static void main(String[] args) {
+
+		CustomUncheckedException demo = new CustomUncheckedException();
+		Product product = null;
+		demo.display(product);
+		System.out.println("bye bye");
+
+	}
+
+	public void display(Product product) {
+		if (product == null) {
+			 
+			InvalidArgumentUnCheckedException exception = new InvalidArgumentUnCheckedException("invalid argument");
+			  throw exception;
+			
+		}
+		String id = product.getId();
+		String name = product.getName();
+		System.out.println("product =" + id + " " + name);
+
+	}
+
+
+}

@@ -1,0 +1,5 @@
+package details.dao;
+
+public interface ICustomerDao {
+
+}

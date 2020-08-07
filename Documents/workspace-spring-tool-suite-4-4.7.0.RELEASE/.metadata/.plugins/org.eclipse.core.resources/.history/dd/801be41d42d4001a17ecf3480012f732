@@ -1,0 +1,5 @@
+package com.dxctraining.entities;
+
+public class ComputerScienceStudent {
+
+}

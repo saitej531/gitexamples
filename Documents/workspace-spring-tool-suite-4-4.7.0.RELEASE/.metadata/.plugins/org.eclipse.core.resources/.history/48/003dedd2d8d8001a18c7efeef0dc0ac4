@@ -1,0 +1,46 @@
+package studentdemo;
+
+import java.util.*;
+
+
+public class Student {
+	
+	
+	private String Rollno;
+	
+	private int Age;
+	
+	
+	public Student(String rollno,int age){
+		this.Rollno=rollno;
+		this.Age=age;
+		
+	}
+	
+
+	public String getRoll() {
+		return rollno;
+	}
+
+	public void setRoll(String roll) {
+		this.rollno = roll;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+
+
+	
+	
+	
+	
+	
+	
+
+}

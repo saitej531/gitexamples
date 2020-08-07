@@ -1,0 +1,27 @@
+package com.dxctraining.dao;
+
+import com.dxctraining.entities.*;
+import com.dxctraining.exceptions.StudentNotFoundException;
+
+import java.util.*;
+
+public class StudentDaoImpl implements IStudentDao {
+
+	private Map<Integer, Student> store = new HashMap<>();
+
+	private int generatedId;
+
+	private int generateId() {
+		generatedId++;
+		return generatedId;
+	}
+
+	@Override
+	public Student findById(int id) {
+		Student student = store.get(id);
+		if (student == null) {
+			throw new StudentNotFoundException("student not found for id=" + id);
+		}
+		return student;
+
+}

@@ -1,0 +1,8 @@
+package java8demos;
+
+public interface IToString {
+	
+	String toString(Integer num);
+	
+
+}

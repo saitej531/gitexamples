@@ -65,14 +65,17 @@ public class CustomerServiceImpl {
 	public Customer update(Customer customer) {
 
 		checkCustomer(customer);
-		customer = dao.Update(Customer);
+		customer = dao.update(customer);
 		return customer;
 	}
 
 	public void delete(int id) {
 
+		String CustomerId = null;
 		checkCustomerId(CustomerId);
 		dao.delete(CustomerId);
+		
+		
 
 	}
 

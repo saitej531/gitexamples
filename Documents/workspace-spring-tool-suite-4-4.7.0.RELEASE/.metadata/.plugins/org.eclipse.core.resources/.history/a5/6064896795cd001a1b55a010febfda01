@@ -1,0 +1,10 @@
+package exceptiondemos;
+
+public class InvalidArgumentUncheckedException {
+
+	public InvalidArgumentUncheckedException(String msg) {
+		super(msg);
+		
+	}
+
+}

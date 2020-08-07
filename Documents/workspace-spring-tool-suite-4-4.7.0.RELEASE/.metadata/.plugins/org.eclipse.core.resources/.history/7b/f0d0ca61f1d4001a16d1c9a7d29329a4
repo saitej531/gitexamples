@@ -1,0 +1,5 @@
+package details.entities;
+
+public class RegularCustomer {
+
+}

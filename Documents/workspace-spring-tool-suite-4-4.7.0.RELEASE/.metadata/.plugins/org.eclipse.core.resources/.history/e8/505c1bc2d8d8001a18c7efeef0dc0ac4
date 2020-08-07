@@ -1,0 +1,12 @@
+package studentdemo;
+
+public class StudentsMain {
+	
+	public static void main(String args[])
+	{
+		
+		
+		
+	}
+
+}
